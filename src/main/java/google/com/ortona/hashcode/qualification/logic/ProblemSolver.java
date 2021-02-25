@@ -41,12 +41,21 @@ public class ProblemSolver {
 	private void performIteration(ProblemContainer pC) {
 		pC.reset();
 		
-		//bla
-		//compute score
+		for(int i = 0; i < pC.time; i++) {
+			for(Intersection inter:pC.intersections) {
+				for(Street street:inter.getIncomingStreets()) {
+					performAction(pC, street, inter, i);
+				}
+			}
+		}
 		
 		int score = 0;
 		score2scheduler.put(score, scheduler);
 		scheduler = modifyScheduler(pC);
+		
+	}
+	
+	private void performAction(ProblemContainer pC, Street street, Intersection inter, int time) {
 		
 	}
 	

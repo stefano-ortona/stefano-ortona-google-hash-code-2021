@@ -12,7 +12,7 @@ public class ProblemContainer {
 	public List<Street> streets;
 	public List<Intersection> intersections;
 	public List<Car> cars;
-	int time;
+	public int time;
 
 	public ProblemContainer(List<Street> streets, List<Intersection> interesctions, List<Car> cars, int time) {
 	}
