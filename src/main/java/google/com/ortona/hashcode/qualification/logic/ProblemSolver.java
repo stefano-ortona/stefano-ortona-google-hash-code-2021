@@ -16,7 +16,7 @@ public class ProblemSolver {
 	
 	final int iteration = 100;
 	
-	SimpleScheduleModifier modifier = new SimpleSchedulerModifier();
+	SimpleScheduleModifier modifier = new SimpleScheduleModifier();
 
 
 	public SolutionContainer solve(ProblemContainer problem) {
