@@ -5,6 +5,7 @@ import google.com.ortona.hashcode.qualification.logic.Intersection;
 import google.com.ortona.hashcode.qualification.logic.Street;
 import google.com.ortona.hashcode.qualification.model.ProblemContainer;
 import jnr.ffi.annotations.In;
+import org.jruby.RubyProcess;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -170,6 +171,11 @@ public class UtilsFile {
             streets.add(street);
             street.setName(streetRaw[2]);
             street.setLength(Integer.parseInt(streetRaw[3]));
+//            System.out.println("Adding");
+//            System.out.println(street.getName());
+//            System.out.println(streetRaw[2]);
+//            System.out.println("---");
+
             name2street.put(street.getName(), street);
 
             if (id2streets.containsKey(Integer.parseInt(streetRaw[1]))){
@@ -195,13 +201,24 @@ public class UtilsFile {
             Car car = new Car();
             car.setId(c);
             cars.add(car);
-
             String[] carRaw = splitString(carsRaw[c], " ");
-            String[] pathRaw= cloneArrayOfString(file, 1, carRaw.length);
+//            System.out.println(carRaw[0]);
+//            System.out.println(carRaw[1]);
+            String[] pathRaw= cloneArrayOfString(carRaw, 1, carRaw.length);
+//            System.out.println(pathRaw[0]);
+//            System.out.println(pathRaw[1]);
+//            System.out.println(pathRaw[2]);
             ArrayList<Street> ss = new ArrayList<>();
 
             for (int pa=0; pa<pathRaw.length; pa++){
+
                 Street str = name2street.get(pathRaw[pa]);
+//                System.out.println("GET");
+//                System.out.println(pathRaw[pa]);
+//                System.out.println(str.getName());
+//                System.out.println(pathRaw[1]);
+//                System.out.println(pathRaw[pa]);
+//                System.out.println(str.toString());
                 ss.add(str);
 
             }
