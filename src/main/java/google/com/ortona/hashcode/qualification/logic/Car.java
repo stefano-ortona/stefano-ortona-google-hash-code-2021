@@ -59,7 +59,12 @@ public class Car {
 	
 	
 	public String toString() {
-		return id+"";
+		String s = id+", path: \n";
+		for(final Street street : this.path){
+			s += street.getName() + " ";
+		}
+		s += "\n";
+		return s;
 	}
 
 }

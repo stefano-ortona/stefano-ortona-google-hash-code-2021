@@ -30,13 +30,13 @@ public class ProblemContainer {
 		for(final Street street : this.streets){
 			s += street.getName() + " ";
 		}
-		s += "\n intersections: ";
+		s += "\n intersections: \n";
 		for(final Intersection intersection : this.intersections){
-			s += intersection.getId() + " ";
+			s += intersection.toString() + " ";
 		}
 		s += "\n cars: ";
 		for(final Car car : this.cars){
-			s += car.getId() + " ";
+			s += car.toString() + " ";
 		}
 		s += "\n time: " + this.time;
 		s += "\n carBonus: " + this.carBonus;

@@ -39,6 +39,14 @@ public class Intersection {
 	}
 	
 	
-	
+
+	public String toString() {
+		String s = id+" , incomingStreets: \n";
+		for(final Street street : this.incomingStreets){
+			s += street.getName() + " ";
+		}
+		s += "\n";
+		return s;
+	}
 
 }
