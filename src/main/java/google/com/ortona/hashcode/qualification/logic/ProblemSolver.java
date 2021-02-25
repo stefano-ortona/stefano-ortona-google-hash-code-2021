@@ -51,10 +51,8 @@ public class ProblemSolver {
 			}
 		}
 		
-		int score = 0;
-		score2scheduler.put(score, scheduler);
-		scheduler = modifyScheduler(pC);
-		
+		score2scheduler.put(scheduler.totScore, scheduler);
+		scheduler = modifyScheduler(pC);		
 	}
 	
 	private void performAction(ProblemContainer pC, Street street, Intersection inter, int time) {
