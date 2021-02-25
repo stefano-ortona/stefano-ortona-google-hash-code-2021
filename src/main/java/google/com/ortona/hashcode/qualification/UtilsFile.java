@@ -158,9 +158,9 @@ public class UtilsFile {
         List<Car> cars = new ArrayList<>();
 
         String[] file = this.getFile();
-        int endStreets = this.getStreetsAmount();
+        int endStreets = this.getStreetsAmount() + 1;
         String[] streetsRaw = cloneArrayOfString(file, 1, endStreets);
-        String[] carsRaw = cloneArrayOfString(file, endStreets + 1, this.file.length);
+        String[] carsRaw = cloneArrayOfString(file, endStreets, this.file.length);
         Map<Integer, ArrayList<Street>> id2streets = new HashMap<>();
         Map<String, Street> name2street = new HashMap<>();
 

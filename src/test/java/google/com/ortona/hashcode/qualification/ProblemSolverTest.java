@@ -27,17 +27,22 @@ public class ProblemSolverTest {
 	public void firstTest() {
 		LOG.info("----------------------");
 		LOG.info("First test is starting");
+		final ProblemContainer p = READER.readProblem("a.txt");
+		LOG.info(p.toString());
+		final SolutionContainer solution = SOLVER.solve(p);
+		Assert.assertNotNull(solution);
+		LOG.info("test1 solution: " + solution.toString() + "\nScore: " + solution.getScore());
 		Assert.assertTrue(true);
 		
 	}
 
 	@Test
 	public void testFirstInput() throws IOException {
-		//final ProblemContainer p = READER.readProblem("a_example");
-		final ProblemContainer p = READER.readProblem("b_little_bit_of_everything.in");
-		//final ProblemContainer p = READER.readProblem("c_many_ingredients.in");
-		//final ProblemContainer p = READER.readProblem("d_many_pizzas.in");
-		//final ProblemContainer p = READER.readProblem("e_many_teams.in");
+		//final ProblemContainer p = READER.readProblem("a.txt");
+		final ProblemContainer p = READER.readProblem("b.txt");
+		//final ProblemContainer p = READER.readProblem("c.txt");
+		//final ProblemContainer p = READER.readProblem("d.txt");
+		//final ProblemContainer p = READER.readProblem("e.txt");
 
 		LOG.info(p.toString());
 

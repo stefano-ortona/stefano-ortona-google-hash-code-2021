@@ -2,6 +2,7 @@ package google.com.ortona.hashcode.qualification.model;
 
 import java.util.List;
 
+
 import google.com.ortona.hashcode.qualification.logic.Car;
 import google.com.ortona.hashcode.qualification.logic.Intersection;
 import google.com.ortona.hashcode.qualification.logic.IntersectionScheduler;
@@ -16,11 +17,30 @@ public class ProblemContainer {
 	public int carBonus;
 
 	public ProblemContainer(List<Street> streets, List<Intersection> intersections, List<Car> cars, int time, int carBonus) {
+		this.streets = streets;
+		this.intersections = intersections;
+		this.cars = cars;
+		this.time = time;
+		this.carBonus = carBonus;
 	}
 
 	@Override
 	public String toString() {
-		return "";
+		String s = "streets: ";
+		for(final Street street : this.streets){
+			s += street.getName() + " ";
+		}
+		s += "\n intersections: ";
+		for(final Intersection intersection : this.intersections){
+			s += intersection.getId() + " ";
+		}
+		s += "\n cars: ";
+		for(final Car car : this.cars){
+			s += car.getId() + " ";
+		}
+		s += "\n time: " + this.time;
+		s += "\n carBonus: " + this.carBonus;
+		return s;
 	}
 	
 	public void reset() {
