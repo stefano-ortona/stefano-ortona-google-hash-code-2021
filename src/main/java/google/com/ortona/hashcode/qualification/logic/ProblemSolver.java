@@ -41,7 +41,12 @@ public class ProblemSolver {
 	
 	
 	private void performIteration(ProblemContainer pC) {
-		pC.reset();
+		pC = pC.reset();
+		for(int interId:scheduler.intersection2schedules.keySet()) {
+			for(ScheduleUnit sU:scheduler.intersection2schedules.get(interId)) {
+				sU.street = pC.getStreet(sU.street.name);
+			}
+		}
 		
 		for(int i = 0; i < pC.time; i++) {
 			for(Intersection inter:pC.intersections) {
