@@ -15,6 +15,8 @@ public class ProblemSolver {
 	Map<Integer, IntersectionScheduler> score2scheduler;
 	
 	final int iteration = 100;
+	
+	SimpleScheduleModifier modifier = new SimpleSchedulerModifier();
 
 
 	public SolutionContainer solve(ProblemContainer problem) {
@@ -56,12 +58,25 @@ public class ProblemSolver {
 	}
 	
 	private void performAction(ProblemContainer pC, Street street, Intersection inter, int time) {
-		
+		if(scheduler.isGreen(inter, street, time) && !street.currentCars.isEmpty() && street.currentCars.get(0).nextStreetAvailableTime >= time) {
+			Car c = street.currentCars.remove(0);
+			if(c.curIndex >= c.path.size()) {
+				this.scheduler.totScore += pC.carBonus + pC.time - time;
+			}
+			else {
+				c.curIndex++;
+				c.path.get(c.curIndex).currentCars.add(c);
+				c.nextStreetAvailableTime += c.path.get(c.curIndex).length;
+			}
+			
+		} else {
+			street.maxCarsWaiting = Math.max(street.maxCarsWaiting, street.currentCars.size());
+			street.totalCarsWaiting += street.currentCars.size();
+		}
 	}
 	
 	private IntersectionScheduler modifyScheduler(ProblemContainer pC) {
-		
-		return null;
+		return this.modifier.modify(pC, scheduler);
 		
 	}
 

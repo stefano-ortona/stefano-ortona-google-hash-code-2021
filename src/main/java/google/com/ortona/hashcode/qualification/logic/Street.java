@@ -6,6 +6,9 @@ public class Street {
 	public String name;
 	public int length;
 	public List<Car> currentCars;
+	public int maxCarsWaiting = 0;
+	public int totalCarsWaiting = 0;
+	
 	public String getName() {
 		return name;
 	}
