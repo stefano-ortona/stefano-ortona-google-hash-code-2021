@@ -15,7 +15,7 @@ public class ProblemContainer {
 	public int time;
 	public int carBonus;
 
-	public ProblemContainer(List<Street> streets, List<Intersection> interesctions, List<Car> cars, int time) {
+	public ProblemContainer(List<Street> streets, List<Intersection> intersections, List<Car> cars, int time, int carBonus) {
 	}
 
 	@Override

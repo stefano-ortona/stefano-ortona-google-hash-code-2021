@@ -3,6 +3,7 @@ package google.com.ortona.hashcode.qualification;
 import google.com.ortona.hashcode.qualification.logic.Car;
 import google.com.ortona.hashcode.qualification.logic.Intersection;
 import google.com.ortona.hashcode.qualification.logic.Street;
+import google.com.ortona.hashcode.qualification.model.ProblemContainer;
 import jnr.ffi.annotations.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +35,7 @@ public class UtilsFile {
     List<Intersection> intersections;
     List<Car> cars;
     int carBonus;
+    ProblemContainer problemContainer;
 
     // 2. generate setters and getters for header and data
     public void setHeader(int[] header) {
@@ -124,6 +126,14 @@ public class UtilsFile {
         this.carBonus = carBonus;
     }
 
+    public ProblemContainer getProblemContainer() {
+        return problemContainer;
+    }
+
+    public void setProblemContainer(ProblemContainer problemContainer) {
+        this.problemContainer = problemContainer;
+    }
+
     //3. define logic of createHeader() and createData()
 
     public void createHeader() {
@@ -201,6 +211,11 @@ public class UtilsFile {
         this.setStreets(streets);
         this.setIntersections(intersections);
         this.setCars(cars);
+
+        problemContainer = new ProblemContainer(this.getStreets(), this.getIntersections(), this.getCars(), this.getTime(), this.getBonus());
+
+        this.setProblemContainer(problemContainer);
+
     }
 
 
