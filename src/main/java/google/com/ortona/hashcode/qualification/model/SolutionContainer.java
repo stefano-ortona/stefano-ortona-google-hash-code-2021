@@ -1,9 +1,14 @@
 package google.com.ortona.hashcode.qualification.model;
 
+import google.com.ortona.hashcode.qualification.logic.IntersectionScheduler;
+
 public class SolutionContainer {
+	
+	IntersectionScheduler scheduler;
 
 
-	public SolutionContainer() {
+	public SolutionContainer(IntersectionScheduler scheduler) {
+		this.scheduler = scheduler;
 	}
 
 	@Override
