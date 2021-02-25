@@ -22,7 +22,7 @@ public class SolutionContainer {
 			s += this.scheduler.getIntersection2schedules().get(id).size() + "\n";
 			
 			for(ScheduleUnit unit:this.scheduler.getIntersection2schedules().get(id)) {
-				s += unit.getStreet().getName() + " " + unit.getDuration();
+				s += unit.getStreet().getName() + " " + unit.getDuration() + "\n";
 			}
 		}
 		return s;
