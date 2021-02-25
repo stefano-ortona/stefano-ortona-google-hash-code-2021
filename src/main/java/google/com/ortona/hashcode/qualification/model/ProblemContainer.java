@@ -13,6 +13,7 @@ public class ProblemContainer {
 	public List<Intersection> intersections;
 	public List<Car> cars;
 	public int time;
+	public int carBonus;
 
 	public ProblemContainer(List<Street> streets, List<Intersection> interesctions, List<Car> cars, int time) {
 	}
