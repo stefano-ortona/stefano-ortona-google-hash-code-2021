@@ -1,7 +1,8 @@
 package google.com.ortona.hashcode.qualification.model;
 
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 import google.com.ortona.hashcode.qualification.logic.Car;
 import google.com.ortona.hashcode.qualification.logic.Intersection;
@@ -15,6 +16,7 @@ public class ProblemContainer {
 	public List<Car> cars;
 	public int time;
 	public int carBonus;
+	private Map<String, Street> name2street;
 
 	public ProblemContainer(List<Street> streets, List<Intersection> intersections, List<Car> cars, int time, int carBonus) {
 		this.streets = streets;
@@ -22,6 +24,12 @@ public class ProblemContainer {
 		this.cars = cars;
 		this.time = time;
 		this.carBonus = carBonus;
+		this.name2street = new HashMap<>();
+		streets.forEach( s-> name2street.put(s.getName(), s));
+	}
+	
+	public Street getStreet(String name) {
+		return this.name2street.get(name);
 	}
 
 	@Override
