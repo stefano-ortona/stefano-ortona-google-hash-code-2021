@@ -1,6 +1,7 @@
 package google.com.ortona.hashcode.qualification;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,7 +10,10 @@ import org.slf4j.LoggerFactory;
 
 import google.com.ortona.hashcode.qualification.io.ProblemReader;
 import google.com.ortona.hashcode.qualification.io.ProblemWriter;
+import google.com.ortona.hashcode.qualification.logic.Car;
+import google.com.ortona.hashcode.qualification.logic.Intersection;
 import google.com.ortona.hashcode.qualification.logic.ProblemSolver;
+import google.com.ortona.hashcode.qualification.logic.Street;
 import google.com.ortona.hashcode.qualification.model.ProblemContainer;
 import google.com.ortona.hashcode.qualification.model.SolutionContainer;
 /**

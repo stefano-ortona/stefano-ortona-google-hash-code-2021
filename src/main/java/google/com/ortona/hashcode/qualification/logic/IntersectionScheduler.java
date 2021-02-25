@@ -27,5 +27,12 @@ public class IntersectionScheduler {
 		}
 		return false;
 	}
-
+	
+	public Map<Integer, List<ScheduleUnit>> getIntersection2schedules() {
+		return this.intersection2schedules;
+	}
+	
+	public int getTotScore() {
+		return this.totScore;
+	}
 }
