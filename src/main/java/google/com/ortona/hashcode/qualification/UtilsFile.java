@@ -171,6 +171,7 @@ public class UtilsFile {
             streets.add(street);
             street.setName(streetRaw[2]);
             street.setLength(Integer.parseInt(streetRaw[3]));
+            street.currentCars = new ArrayList<>();
 //            System.out.println("Adding");
 //            System.out.println(street.getName());
 //            System.out.println(streetRaw[2]);
@@ -223,6 +224,8 @@ public class UtilsFile {
 
             }
             car.setPath(ss);
+            ss.get(0).currentCars.add(car);
+            ss.get(0).totCarsPassed++;
         }
 
         this.setStreets(streets);
@@ -260,7 +263,6 @@ public class UtilsFile {
             File file = new File(RESOURCE_PATH + filepath);
             String absolutePath = file.getAbsolutePath();
 
-            LOGGER.info("File absolute path:" + absolutePath);
             readFile(absolutePath);
 
             //LOGGER.info("Header creation: start");

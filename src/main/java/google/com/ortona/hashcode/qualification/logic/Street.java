@@ -8,6 +8,7 @@ public class Street {
 	public List<Car> currentCars;
 	public int maxCarsWaiting = 0;
 	public int totalCarsWaiting = 0;
+	public int totCarsPassed = 0;
 	
 	public String getName() {
 		return name;
@@ -49,6 +50,14 @@ public class Street {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	
+	public String toString() {
+		StringBuilder s = new StringBuilder();
+		currentCars.forEach(c -> s.append(c.getId()+","));
+		return "name: "+name+", length: "+length+"\n"+
+				"Cars: "+s.toString();
+				
 	}
 	
 	

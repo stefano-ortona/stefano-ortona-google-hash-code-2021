@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import google.com.ortona.hashcode.qualification.io.ProblemReader;
 import google.com.ortona.hashcode.qualification.logic.Car;
 import google.com.ortona.hashcode.qualification.logic.Intersection;
 import google.com.ortona.hashcode.qualification.logic.IntersectionScheduler;
@@ -51,8 +52,8 @@ public class ProblemContainer {
 		return s;
 	}
 	
-	public void reset() {
-		
+	public ProblemContainer reset() {
+		return ProblemReader.readProblemForReset();
 	}
 	
 }

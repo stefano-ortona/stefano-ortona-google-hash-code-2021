@@ -1,12 +1,12 @@
 package google.com.ortona.hashcode.qualification.logic;
 
 public class ScheduleUnit {
-	Street street;
+	String street;
 	int duration;
-	public Street getStreet() {
+	public String getStreet() {
 		return street;
 	}
-	public void setStreet(Street street) {
+	public void setStreet(String street) {
 		this.street = street;
 	}
 	public int getDuration() {
@@ -14,6 +14,9 @@ public class ScheduleUnit {
 	}
 	public void setDuration(int duration) {
 		this.duration = duration;
+	}
+	public String toString() {
+		return street+"["+duration+"]";
 	}
 	
 	

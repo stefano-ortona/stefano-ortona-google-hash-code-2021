@@ -59,7 +59,7 @@ public class Car {
 	
 	
 	public String toString() {
-		String s = id+", path: \n";
+		String s = id+", nextTime: "+nextStreetAvailableTime+", path: \n";
 		for(final Street street : this.path){
 			s += street.getName() + " ";
 		}
